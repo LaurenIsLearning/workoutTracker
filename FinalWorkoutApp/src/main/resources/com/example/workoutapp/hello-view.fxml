@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="baseVBox" alignment="CENTER" minHeight="465.0" minWidth="468.0" prefHeight="489.0" prefWidth="835.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workoutapp.Controller">
+    <padding>
+        <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+    </padding>
+   <children>
+      <HBox fx:id="topHBox" prefHeight="11.0" prefWidth="452.0">
+         <children>
+            <Label fx:id="dateLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="122.0" text="Date">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="splitLabel" prefHeight="27.0" prefWidth="58.0" text="Split: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sessionNameTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#handleSessionNameChange" prefHeight="25.0" prefWidth="580.0" promptText="Session Name" HBox.hgrow="SOMETIMES">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+         </children>
+      </HBox>
+      <TableView fx:id="strengthTable" editable="true" prefHeight="200.0" prefWidth="415.0">
+        <columns>
+          <TableColumn fx:id="strNameCol" prefWidth="160.0" text="strength exercise" />
+          <TableColumn fx:id="weightCol" prefWidth="69.0" text="weight" />
+            <TableColumn fx:id="setsCol" prefWidth="74.0" text="sets" />
+            <TableColumn fx:id="repsCol" prefWidth="96.0" text="reps" />
+            <TableColumn fx:id="volumeCol" prefWidth="81.0" text="volume" />
+            <TableColumn fx:id="oneRepMaxCol" prefWidth="90.0" text="one rep max" />
+            <TableColumn fx:id="strNotesCol" prefWidth="201.0" text="notes" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="cardioTable" editable="true" prefHeight="113.0" prefWidth="420.0">
+        <columns>
+          <TableColumn fx:id="cardNameCol" prefWidth="153.0" text="cardio exercise" />
+          <TableColumn fx:id="inclineCol" prefWidth="66.0" text="incline" />
+            <TableColumn fx:id="speedCol" prefWidth="83.0" text="speed" />
+            <TableColumn fx:id="timeCol" prefWidth="95.0" text="time (min)" />
+            <TableColumn fx:id="distanceCol" prefWidth="87.0" text="distance" />
+            <TableColumn fx:id="paceCol" prefWidth="93.0" text="pace" />
+            <TableColumn fx:id="cardNotesCol" prefWidth="191.0" text="notes" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox fx:id="bottomHBox" prefHeight="23.0" prefWidth="452.0">
+         <children>
+            <Label fx:id="chooseSessionLabel" prefHeight="30.0" prefWidth="165.0" text="Choose session to view: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="75.0" />
+               </HBox.margin>
+            </Label>
+            <MenuButton fx:id="pastSessionsMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="30.0" prefWidth="440.0" text="-Current Session-">
+              <items>
+                <MenuItem fx:id="pastSessionsMenuItem" mnemonicParsing="false" text="Session 1" />
+              </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </MenuButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox prefHeight="26.0" prefWidth="667.0">
+         <children>
+            <Button fx:id="createNewSessionButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCreateNewSession" prefHeight="36.0" prefWidth="214.0" text="Create New Session">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="165.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="deleteSessionButton" mnemonicParsing="false" onAction="#handleDeleteSession" prefHeight="30.0" prefWidth="212.0" text="Delete Session" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
